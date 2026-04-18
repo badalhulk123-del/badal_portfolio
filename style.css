@@ -1,67 +1,123 @@
+:root {
+    --bg: #0f172a;
+    --text: #fff;
+    --card: rgba(255,255,255,0.1);
+}
+
+.light {
+    --bg: #f4f4f4;
+    --text: #111;
+    --card: rgba(0,0,0,0.05);
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background: #f4f4f4;
-    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
 }
 
-header {
-    background: #222;
-    color: #fff;
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+/* HERO */
+.hero {
     text-align: center;
-    padding: 40px 20px;
+    padding: 80px 20px;
 }
 
-section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background: #fff;
-    border-radius: 8px;
+.hero h1 {
+    font-size: 2.8rem;
 }
 
-h2 {
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
+.hero p {
+    opacity: 0.7;
 }
 
-.skills ul {
-    list-style: none;
-    padding: 0;
-}
-
-.skills li {
-    background: #eee;
-    margin: 5px 0;
-    padding: 8px;
-    border-radius: 5px;
-}
-
-.project {
-    margin-top: 10px;
-}
-
-.social a {
-    display: inline-block;
-    margin: 10px;
+/* BUTTONS */
+.btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: #00c6ff;
+    color: #000;
     text-decoration: none;
-    color: #fff;
-    background: #0077b5;
-    padding: 10px 15px;
-    border-radius: 5px;
+    margin: 10px;
 }
 
-.social a:nth-child(2) {
-    background: #3b5998;
+.btn.outline {
+    background: transparent;
+    border: 1px solid #00c6ff;
+    color: #00c6ff;
 }
 
-.social a:nth-child(3) {
-    background: #e1306c;
+/* SECTIONS */
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }
 
+/* GLASS */
+.glass {
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills span {
+    padding: 8px 12px;
+    background: var(--card);
+    border-radius: 20px;
+}
+
+/* CARDS */
+.card {
+    background: var(--card);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+/* SOCIAL */
+.social a {
+    margin-right: 10px;
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 10px;
-    background: #222;
-    color: white;
+    padding: 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .hero h1 {
+        font-size: 2rem;
+    }
 }
